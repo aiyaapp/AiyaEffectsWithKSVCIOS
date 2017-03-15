@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3BA47CE1E77D32400AA7526 /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47CD1E77D32400AA7526 /* AiyaCameraSDK.framework */; };
+		D3BA47D11E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA47D01E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.m */; };
+		D3BA47D41E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA47D31E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.m */; };
+		D3BA47D61E77DE7900AA7526 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47D51E77DE7900AA7526 /* libc++.tbd */; };
+		D3BA47D81E77DE7E00AA7526 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47D71E77DE7E00AA7526 /* libz.tbd */; };
+		D3BA481A1E77E50E00AA7526 /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47F11E77E50E00AA7526 /* AiyaCameraSDK.framework */; };
+		D3BA482F1E77E50E00AA7526 /* candide3-ClosedMouth.wfm in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48111E77E50E00AA7526 /* candide3-ClosedMouth.wfm */; };
+		D3BA48301E77E50E00AA7526 /* candide3.fdp in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48121E77E50E00AA7526 /* candide3.fdp */; };
+		D3BA48311E77E50E00AA7526 /* candide3.wfm in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48131E77E50E00AA7526 /* candide3.wfm */; };
+		D3BA48321E77E50E00AA7526 /* Face Detector.cfg in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48141E77E50E00AA7526 /* Face Detector.cfg */; };
+		D3BA48331E77E50E00AA7526 /* Facial Features Tracker - High.cfg in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48151E77E50E00AA7526 /* Facial Features Tracker - High.cfg */; };
+		D3BA48341E77E50E00AA7526 /* Head Tracker.cfg in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48161E77E50E00AA7526 /* Head Tracker.cfg */; };
+		D3BA48351E77E50E00AA7526 /* jk_300.fdp in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48171E77E50E00AA7526 /* jk_300.fdp */; };
+		D3BA48361E77E50E00AA7526 /* jk_300.wfm in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48181E77E50E00AA7526 /* jk_300.wfm */; };
+		D3BA48371E77E50E00AA7526 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48191E77E50E00AA7526 /* lookup.png */; };
+		D3BA48391E77E54B00AA7526 /* bdtsdata in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48381E77E54B00AA7526 /* bdtsdata */; };
+		D3BA48561E77E59A00AA7526 /* KSYCtrlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48441E77E59A00AA7526 /* KSYCtrlView.m */; };
+		D3BA48571E77E59A00AA7526 /* KSYPresetCfgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48461E77E59A00AA7526 /* KSYPresetCfgVC.m */; };
+		D3BA48581E77E59A00AA7526 /* KSYPresetCfgView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48481E77E59A00AA7526 /* KSYPresetCfgView.m */; };
+		D3BA48591E77E59A00AA7526 /* KSYStateLableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA484A1E77E59A00AA7526 /* KSYStateLableView.m */; };
+		D3BA485A1E77E59A00AA7526 /* KSYFileSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA484D1E77E59A00AA7526 /* KSYFileSelector.m */; };
+		D3BA485B1E77E59A00AA7526 /* KSYNameSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA484F1E77E59A00AA7526 /* KSYNameSlider.m */; };
+		D3BA485C1E77E59A00AA7526 /* KSYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48511E77E59A00AA7526 /* KSYReachability.m */; };
+		D3BA485D1E77E59A00AA7526 /* KSYUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48531E77E59A00AA7526 /* KSYUIVC.m */; };
+		D3BA485E1E77E59A00AA7526 /* KSYUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48551E77E59A00AA7526 /* KSYUIView.m */; };
+		D3BA48B81E77EBCC00AA7526 /* gougou in Resources */ = {isa = PBXBuildFile; fileRef = D3BA48B71E77EBCC00AA7526 /* gougou */; };
+		DE8D88B7B3EA2D2CAC19E285 /* libPods-KSYFaceunityKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A8B541AAB113FD2F8BBD7 /* libPods-KSYFaceunityKitDemo.a */; };
+		E3142FB11DC357AB00F88070 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3142FB01DC357AB00F88070 /* main.m */; };
+		E3142FB41DC357AB00F88070 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3142FB31DC357AB00F88070 /* AppDelegate.m */; };
+		E3142FB71DC357AB00F88070 /* KSYAiyaCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E3142FB61DC357AB00F88070 /* KSYAiyaCameraVC.m */; };
+		E3142FBA1DC357AB00F88070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3142FB81DC357AB00F88070 /* Main.storyboard */; };
+		E3142FBC1DC357AB00F88070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3142FBB1DC357AB00F88070 /* Assets.xcassets */; };
+		E3142FBF1DC357AB00F88070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3142FBD1DC357AB00F88070 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3142FC61DC357AB00F88070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3142FA41DC357AB00F88070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3142FAB1DC357AB00F88070;
+			remoteInfo = KSYFaceunityKitDemo;
+		};
+		E3142FD11DC357AB00F88070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3142FA41DC357AB00F88070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3142FAB1DC357AB00F88070;
+			remoteInfo = KSYFaceunityKitDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		049A8B541AAB113FD2F8BBD7 /* libPods-KSYFaceunityKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSYFaceunityKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3679E844601EEEBAA419DF /* Pods-KSYFaceunityKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYFaceunityKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2F3380426416F3080C1C736F /* Pods-KSYFaceunityKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYFaceunityKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B39E0E1FB5FB1AE2875D62F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D3BA47CD1E77D32400AA7526 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
+		D3BA47CF1E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAiyaGPUImageEffectFilter.h; sourceTree = "<group>"; };
+		D3BA47D01E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageEffectFilter.m; sourceTree = "<group>"; };
+		D3BA47D21E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAiyaGPUImageTrackFilter.h; sourceTree = "<group>"; };
+		D3BA47D31E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageTrackFilter.m; sourceTree = "<group>"; };
+		D3BA47D51E77DE7900AA7526 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D3BA47D71E77DE7E00AA7526 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D3BA47F11E77E50E00AA7526 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
+		D3BA48111E77E50E00AA7526 /* candide3-ClosedMouth.wfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "candide3-ClosedMouth.wfm"; sourceTree = "<group>"; };
+		D3BA48121E77E50E00AA7526 /* candide3.fdp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candide3.fdp; sourceTree = "<group>"; };
+		D3BA48131E77E50E00AA7526 /* candide3.wfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candide3.wfm; sourceTree = "<group>"; };
+		D3BA48141E77E50E00AA7526 /* Face Detector.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Face Detector.cfg"; sourceTree = "<group>"; };
+		D3BA48151E77E50E00AA7526 /* Facial Features Tracker - High.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Facial Features Tracker - High.cfg"; sourceTree = "<group>"; };
+		D3BA48161E77E50E00AA7526 /* Head Tracker.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Head Tracker.cfg"; sourceTree = "<group>"; };
+		D3BA48171E77E50E00AA7526 /* jk_300.fdp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jk_300.fdp; sourceTree = "<group>"; };
+		D3BA48181E77E50E00AA7526 /* jk_300.wfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jk_300.wfm; sourceTree = "<group>"; };
+		D3BA48191E77E50E00AA7526 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
+		D3BA48381E77E54B00AA7526 /* bdtsdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bdtsdata; sourceTree = "<group>"; };
+		D3BA48431E77E59A00AA7526 /* KSYCtrlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYCtrlView.h; sourceTree = "<group>"; };
+		D3BA48441E77E59A00AA7526 /* KSYCtrlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYCtrlView.m; sourceTree = "<group>"; };
+		D3BA48451E77E59A00AA7526 /* KSYPresetCfgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYPresetCfgVC.h; sourceTree = "<group>"; };
+		D3BA48461E77E59A00AA7526 /* KSYPresetCfgVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYPresetCfgVC.m; sourceTree = "<group>"; };
+		D3BA48471E77E59A00AA7526 /* KSYPresetCfgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYPresetCfgView.h; sourceTree = "<group>"; };
+		D3BA48481E77E59A00AA7526 /* KSYPresetCfgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYPresetCfgView.m; sourceTree = "<group>"; };
+		D3BA48491E77E59A00AA7526 /* KSYStateLableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYStateLableView.h; sourceTree = "<group>"; };
+		D3BA484A1E77E59A00AA7526 /* KSYStateLableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYStateLableView.m; sourceTree = "<group>"; };
+		D3BA484C1E77E59A00AA7526 /* KSYFileSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYFileSelector.h; sourceTree = "<group>"; };
+		D3BA484D1E77E59A00AA7526 /* KSYFileSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYFileSelector.m; sourceTree = "<group>"; };
+		D3BA484E1E77E59A00AA7526 /* KSYNameSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYNameSlider.h; sourceTree = "<group>"; };
+		D3BA484F1E77E59A00AA7526 /* KSYNameSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYNameSlider.m; sourceTree = "<group>"; };
+		D3BA48501E77E59A00AA7526 /* KSYReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYReachability.h; sourceTree = "<group>"; };
+		D3BA48511E77E59A00AA7526 /* KSYReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYReachability.m; sourceTree = "<group>"; };
+		D3BA48521E77E59A00AA7526 /* KSYUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYUIVC.h; sourceTree = "<group>"; };
+		D3BA48531E77E59A00AA7526 /* KSYUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYUIVC.m; sourceTree = "<group>"; };
+		D3BA48541E77E59A00AA7526 /* KSYUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYUIView.h; sourceTree = "<group>"; };
+		D3BA48551E77E59A00AA7526 /* KSYUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYUIView.m; sourceTree = "<group>"; };
+		D3BA48B71E77EBCC00AA7526 /* gougou */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gougou; sourceTree = "<group>"; };
+		DF0E31312A9D0C39BC459792 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E3142FAC1DC357AB00F88070 /* KSYFaceunityKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSYFaceunityKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3142FB01DC357AB00F88070 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3142FB21DC357AB00F88070 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E3142FB31DC357AB00F88070 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E3142FB51DC357AB00F88070 /* KSYAiyaCameraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSYAiyaCameraVC.h; sourceTree = "<group>"; };
+		E3142FB61DC357AB00F88070 /* KSYAiyaCameraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaCameraVC.m; sourceTree = "<group>"; };
+		E3142FB91DC357AB00F88070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3142FBB1DC357AB00F88070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3142FBE1DC357AB00F88070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3142FC01DC357AB00F88070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3142FC51DC357AB00F88070 /* KSYFaceunityKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSYFaceunityKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3142FD01DC357AB00F88070 /* KSYFaceunityKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSYFaceunityKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3142FA91DC357AB00F88070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BA481A1E77E50E00AA7526 /* AiyaCameraSDK.framework in Frameworks */,
+				D3BA47D81E77DE7E00AA7526 /* libz.tbd in Frameworks */,
+				D3BA47D61E77DE7900AA7526 /* libc++.tbd in Frameworks */,
+				D3BA47CE1E77D32400AA7526 /* AiyaCameraSDK.framework in Frameworks */,
+				DE8D88B7B3EA2D2CAC19E285 /* libPods-KSYFaceunityKitDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FC21DC357AB00F88070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FCD1DC357AB00F88070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE1B17907345A3C309754294 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA47D71E77DE7E00AA7526 /* libz.tbd */,
+				D3BA47D51E77DE7900AA7526 /* libc++.tbd */,
+				D3BA47CD1E77D32400AA7526 /* AiyaCameraSDK.framework */,
+				049A8B541AAB113FD2F8BBD7 /* libPods-KSYFaceunityKitDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1C5B21BDB3566B02D04A0C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B39E0E1FB5FB1AE2875D62F7 /* Pods.debug.xcconfig */,
+				DF0E31312A9D0C39BC459792 /* Pods.release.xcconfig */,
+				2F3380426416F3080C1C736F /* Pods-KSYFaceunityKitDemo.debug.xcconfig */,
+				1E3679E844601EEEBAA419DF /* Pods-KSYFaceunityKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3BA47F01E77E50E00AA7526 /* AiyaEffectSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA47F11E77E50E00AA7526 /* AiyaCameraSDK.framework */,
+				D3BA47F21E77E50E00AA7526 /* AiyaEffectsSDKResource */,
+			);
+			path = AiyaEffectSDK;
+			sourceTree = "<group>";
+		};
+		D3BA47F21E77E50E00AA7526 /* AiyaEffectsSDKResource */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA48381E77E54B00AA7526 /* bdtsdata */,
+				D3BA48111E77E50E00AA7526 /* candide3-ClosedMouth.wfm */,
+				D3BA48121E77E50E00AA7526 /* candide3.fdp */,
+				D3BA48131E77E50E00AA7526 /* candide3.wfm */,
+				D3BA48141E77E50E00AA7526 /* Face Detector.cfg */,
+				D3BA48151E77E50E00AA7526 /* Facial Features Tracker - High.cfg */,
+				D3BA48161E77E50E00AA7526 /* Head Tracker.cfg */,
+				D3BA48171E77E50E00AA7526 /* jk_300.fdp */,
+				D3BA48181E77E50E00AA7526 /* jk_300.wfm */,
+				D3BA48191E77E50E00AA7526 /* lookup.png */,
+			);
+			path = AiyaEffectsSDKResource;
+			sourceTree = "<group>";
+		};
+		D3BA48421E77E59A00AA7526 /* KSYPresetCfg */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA48431E77E59A00AA7526 /* KSYCtrlView.h */,
+				D3BA48441E77E59A00AA7526 /* KSYCtrlView.m */,
+				D3BA48451E77E59A00AA7526 /* KSYPresetCfgVC.h */,
+				D3BA48461E77E59A00AA7526 /* KSYPresetCfgVC.m */,
+				D3BA48471E77E59A00AA7526 /* KSYPresetCfgView.h */,
+				D3BA48481E77E59A00AA7526 /* KSYPresetCfgView.m */,
+				D3BA48491E77E59A00AA7526 /* KSYStateLableView.h */,
+				D3BA484A1E77E59A00AA7526 /* KSYStateLableView.m */,
+				D3BA484B1E77E59A00AA7526 /* KSYUIUtils */,
+			);
+			path = KSYPresetCfg;
+			sourceTree = "<group>";
+		};
+		D3BA484B1E77E59A00AA7526 /* KSYUIUtils */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA484C1E77E59A00AA7526 /* KSYFileSelector.h */,
+				D3BA484D1E77E59A00AA7526 /* KSYFileSelector.m */,
+				D3BA484E1E77E59A00AA7526 /* KSYNameSlider.h */,
+				D3BA484F1E77E59A00AA7526 /* KSYNameSlider.m */,
+				D3BA48501E77E59A00AA7526 /* KSYReachability.h */,
+				D3BA48511E77E59A00AA7526 /* KSYReachability.m */,
+				D3BA48521E77E59A00AA7526 /* KSYUIVC.h */,
+				D3BA48531E77E59A00AA7526 /* KSYUIVC.m */,
+				D3BA48541E77E59A00AA7526 /* KSYUIView.h */,
+				D3BA48551E77E59A00AA7526 /* KSYUIView.m */,
+			);
+			path = KSYUIUtils;
+			sourceTree = "<group>";
+		};
+		D3BA48B11E77EBBF00AA7526 /* AiyaEffectResources */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA48B71E77EBCC00AA7526 /* gougou */,
+			);
+			name = AiyaEffectResources;
+			path = KSYFaceunityKitDemo/AiyaEffectResources;
+			sourceTree = SOURCE_ROOT;
+		};
+		E3142FA31DC357AB00F88070 = {
+			isa = PBXGroup;
+			children = (
+				E3142FAE1DC357AB00F88070 /* KSYFaceunityKitDemo */,
+				E3142FAD1DC357AB00F88070 /* Products */,
+				C1C5B21BDB3566B02D04A0C6 /* Pods */,
+				BE1B17907345A3C309754294 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E3142FAD1DC357AB00F88070 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3142FAC1DC357AB00F88070 /* KSYFaceunityKitDemo.app */,
+				E3142FC51DC357AB00F88070 /* KSYFaceunityKitDemoTests.xctest */,
+				E3142FD01DC357AB00F88070 /* KSYFaceunityKitDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3142FAE1DC357AB00F88070 /* KSYFaceunityKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D3BA48421E77E59A00AA7526 /* KSYPresetCfg */,
+				D3BA48B11E77EBBF00AA7526 /* AiyaEffectResources */,
+				D3BA47F01E77E50E00AA7526 /* AiyaEffectSDK */,
+				E3142FB21DC357AB00F88070 /* AppDelegate.h */,
+				E3142FB31DC357AB00F88070 /* AppDelegate.m */,
+				E3142FB51DC357AB00F88070 /* KSYAiyaCameraVC.h */,
+				E3142FB61DC357AB00F88070 /* KSYAiyaCameraVC.m */,
+				D3BA47D21E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.h */,
+				D3BA47D31E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.m */,
+				D3BA47CF1E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.h */,
+				D3BA47D01E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.m */,
+				E3142FB81DC357AB00F88070 /* Main.storyboard */,
+				E3142FBB1DC357AB00F88070 /* Assets.xcassets */,
+				E3142FBD1DC357AB00F88070 /* LaunchScreen.storyboard */,
+				E3142FC01DC357AB00F88070 /* Info.plist */,
+				E3142FAF1DC357AB00F88070 /* Supporting Files */,
+			);
+			path = KSYFaceunityKitDemo;
+			sourceTree = "<group>";
+		};
+		E3142FAF1DC357AB00F88070 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3142FB01DC357AB00F88070 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3142FAB1DC357AB00F88070 /* KSYFaceunityKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3142FD91DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemo" */;
+			buildPhases = (
+				235752DEE8D508EEA8BC678B /* [CP] Check Pods Manifest.lock */,
+				E3142FA81DC357AB00F88070 /* Sources */,
+				E3142FA91DC357AB00F88070 /* Frameworks */,
+				E3142FAA1DC357AB00F88070 /* Resources */,
+				D0B4ABF2494EB292E1B6B9CE /* [CP] Embed Pods Frameworks */,
+				DC4F7AF4038DEFBA139B83AD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KSYFaceunityKitDemo;
+			productName = KSYFaceunityKitDemo;
+			productReference = E3142FAC1DC357AB00F88070 /* KSYFaceunityKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3142FC41DC357AB00F88070 /* KSYFaceunityKitDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3142FDC1DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemoTests" */;
+			buildPhases = (
+				E3142FC11DC357AB00F88070 /* Sources */,
+				E3142FC21DC357AB00F88070 /* Frameworks */,
+				E3142FC31DC357AB00F88070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3142FC71DC357AB00F88070 /* PBXTargetDependency */,
+			);
+			name = KSYFaceunityKitDemoTests;
+			productName = KSYFaceunityKitDemoTests;
+			productReference = E3142FC51DC357AB00F88070 /* KSYFaceunityKitDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E3142FCF1DC357AB00F88070 /* KSYFaceunityKitDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3142FDF1DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemoUITests" */;
+			buildPhases = (
+				E3142FCC1DC357AB00F88070 /* Sources */,
+				E3142FCD1DC357AB00F88070 /* Frameworks */,
+				E3142FCE1DC357AB00F88070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3142FD21DC357AB00F88070 /* PBXTargetDependency */,
+			);
+			name = KSYFaceunityKitDemoUITests;
+			productName = KSYFaceunityKitDemoUITests;
+			productReference = E3142FD01DC357AB00F88070 /* KSYFaceunityKitDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3142FA41DC357AB00F88070 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "孙健";
+				TargetAttributes = {
+					E3142FAB1DC357AB00F88070 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = G29KBS7YUL;
+						ProvisioningStyle = Automatic;
+					};
+					E3142FC41DC357AB00F88070 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3142FAB1DC357AB00F88070;
+					};
+					E3142FCF1DC357AB00F88070 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3142FAB1DC357AB00F88070;
+					};
+				};
+			};
+			buildConfigurationList = E3142FA71DC357AB00F88070 /* Build configuration list for PBXProject "KSYFaceunityKitDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3142FA31DC357AB00F88070;
+			productRefGroup = E3142FAD1DC357AB00F88070 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3142FAB1DC357AB00F88070 /* KSYFaceunityKitDemo */,
+				E3142FC41DC357AB00F88070 /* KSYFaceunityKitDemoTests */,
+				E3142FCF1DC357AB00F88070 /* KSYFaceunityKitDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3142FAA1DC357AB00F88070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BA48321E77E50E00AA7526 /* Face Detector.cfg in Resources */,
+				D3BA48341E77E50E00AA7526 /* Head Tracker.cfg in Resources */,
+				D3BA48B81E77EBCC00AA7526 /* gougou in Resources */,
+				E3142FBF1DC357AB00F88070 /* LaunchScreen.storyboard in Resources */,
+				D3BA48351E77E50E00AA7526 /* jk_300.fdp in Resources */,
+				D3BA48301E77E50E00AA7526 /* candide3.fdp in Resources */,
+				D3BA48311E77E50E00AA7526 /* candide3.wfm in Resources */,
+				D3BA48391E77E54B00AA7526 /* bdtsdata in Resources */,
+				D3BA48361E77E50E00AA7526 /* jk_300.wfm in Resources */,
+				D3BA482F1E77E50E00AA7526 /* candide3-ClosedMouth.wfm in Resources */,
+				D3BA48371E77E50E00AA7526 /* lookup.png in Resources */,
+				D3BA48331E77E50E00AA7526 /* Facial Features Tracker - High.cfg in Resources */,
+				E3142FBC1DC357AB00F88070 /* Assets.xcassets in Resources */,
+				E3142FBA1DC357AB00F88070 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FC31DC357AB00F88070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FCE1DC357AB00F88070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		235752DEE8D508EEA8BC678B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0B4ABF2494EB292E1B6B9CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4F7AF4038DEFBA139B83AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3142FA81DC357AB00F88070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BA47D41E77D9AB00AA7526 /* KSYAiyaGPUImageTrackFilter.m in Sources */,
+				E3142FB71DC357AB00F88070 /* KSYAiyaCameraVC.m in Sources */,
+				D3BA485B1E77E59A00AA7526 /* KSYNameSlider.m in Sources */,
+				D3BA48581E77E59A00AA7526 /* KSYPresetCfgView.m in Sources */,
+				D3BA485C1E77E59A00AA7526 /* KSYReachability.m in Sources */,
+				E3142FB41DC357AB00F88070 /* AppDelegate.m in Sources */,
+				D3BA485A1E77E59A00AA7526 /* KSYFileSelector.m in Sources */,
+				D3BA47D11E77D35A00AA7526 /* KSYAiyaGPUImageEffectFilter.m in Sources */,
+				D3BA485E1E77E59A00AA7526 /* KSYUIView.m in Sources */,
+				D3BA48591E77E59A00AA7526 /* KSYStateLableView.m in Sources */,
+				D3BA485D1E77E59A00AA7526 /* KSYUIVC.m in Sources */,
+				E3142FB11DC357AB00F88070 /* main.m in Sources */,
+				D3BA48561E77E59A00AA7526 /* KSYCtrlView.m in Sources */,
+				D3BA48571E77E59A00AA7526 /* KSYPresetCfgVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FC11DC357AB00F88070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3142FCC1DC357AB00F88070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3142FC71DC357AB00F88070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3142FAB1DC357AB00F88070 /* KSYFaceunityKitDemo */;
+			targetProxy = E3142FC61DC357AB00F88070 /* PBXContainerItemProxy */;
+		};
+		E3142FD21DC357AB00F88070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3142FAB1DC357AB00F88070 /* KSYFaceunityKitDemo */;
+			targetProxy = E3142FD11DC357AB00F88070 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3142FB81DC357AB00F88070 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3142FB91DC357AB00F88070 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3142FBD1DC357AB00F88070 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3142FBE1DC357AB00F88070 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3142FD71DC357AB00F88070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3142FD81DC357AB00F88070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3142FDA1DC357AB00F88070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3380426416F3080C1C736F /* Pods-KSYFaceunityKitDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G29KBS7YUL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/KSYFaceunityKitDemo/AiyaEffectSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Bugly\"",
+					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+					"\"${PODS_ROOT}/Headers/Public/libksygpulive\"",
+					../source/libyuv,
+					../source,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/libyuv",
+				);
+				INFOPLIST_FILE = KSYFaceunityKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					../framework,
+					"$(PROJECT_DIR)/KSYFaceunityKitDemo",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E3142FDB1DC357AB00F88070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3679E844601EEEBAA419DF /* Pods-KSYFaceunityKitDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G29KBS7YUL;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/KSYFaceunityKitDemo/AiyaEffectSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Bugly\"",
+					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+					"\"${PODS_ROOT}/Headers/Public/libksygpulive\"",
+					../source/libyuv,
+					../source,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/libyuv",
+				);
+				INFOPLIST_FILE = KSYFaceunityKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/libksygpulive/prebuilt/libs\"",
+					../framework,
+					"$(PROJECT_DIR)/KSYFaceunityKitDemo",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E3142FDD1DC357AB00F88070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSYFaceunityKitDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KSYFaceunityKitDemo.app/KSYFaceunityKitDemo";
+			};
+			name = Debug;
+		};
+		E3142FDE1DC357AB00F88070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSYFaceunityKitDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KSYFaceunityKitDemo.app/KSYFaceunityKitDemo";
+			};
+			name = Release;
+		};
+		E3142FE01DC357AB00F88070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSYFaceunityKitDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KSYFaceunityKitDemo;
+			};
+			name = Debug;
+		};
+		E3142FE11DC357AB00F88070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSYFaceunityKitDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kingsoft.KSYFaceunityKitDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KSYFaceunityKitDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3142FA71DC357AB00F88070 /* Build configuration list for PBXProject "KSYFaceunityKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3142FD71DC357AB00F88070 /* Debug */,
+				E3142FD81DC357AB00F88070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3142FD91DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3142FDA1DC357AB00F88070 /* Debug */,
+				E3142FDB1DC357AB00F88070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3142FDC1DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3142FDD1DC357AB00F88070 /* Debug */,
+				E3142FDE1DC357AB00F88070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3142FDF1DC357AB00F88070 /* Build configuration list for PBXNativeTarget "KSYFaceunityKitDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3142FE01DC357AB00F88070 /* Debug */,
+				E3142FE11DC357AB00F88070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3142FA41DC357AB00F88070 /* Project object */;
+}
