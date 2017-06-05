@@ -14,7 +14,7 @@
 #if USING_DYNAMIC_FRAMEWORK
 #import <libksygpuliveDy/libksygpuimage.h>
 #else
-#import <libksygpulive/libksygpuimage.h>
+#import <libksygpulive_ks3/libksygpuimage.h>
 #endif
 
 /**

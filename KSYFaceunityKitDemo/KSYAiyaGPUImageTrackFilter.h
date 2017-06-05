@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GPUImage/GPUImage.h>
-#import <AiyaCameraSDK/AiyaCameraEffect.h>
+#import <AiyaCameraSDK/AiyaCameraSDK.h>
 
 @interface KSYAiyaGPUImageTrackFilter : GPUImageFilter
 

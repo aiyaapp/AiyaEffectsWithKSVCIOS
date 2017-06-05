@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GPUImage/GPUImage.h>
-#import <AiyaCameraSDK/AiyaCameraEffect.h>
+#import <AiyaCameraSDK/AiyaCameraSDK.h>
 
 typedef NS_ENUM(NSUInteger, KSYAIYA_EFFECT_STATUS) {
     KSYAIYA_EFFECT_STATUS_INIT, /** 没有设置任何特效 */

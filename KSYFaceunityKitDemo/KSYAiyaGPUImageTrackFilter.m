@@ -192,8 +192,8 @@
     }
     
     CGSize scaledSize;
-    scaledSize.width = 320;
-    scaledSize.height = newSize.height * 320 / newSize.width ;
+    scaledSize.width = 176;
+    scaledSize.height = newSize.height * 176 / newSize.width ;
     
     if (CGSizeEqualToSize(scaledSize, CGSizeZero)){
         imageSize = scaledSize;

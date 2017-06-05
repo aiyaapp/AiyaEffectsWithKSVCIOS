@@ -5,7 +5,7 @@
 #import "KSYPresetCfgView.h"
 #import "KSYStateLableView.h"
 #import "KSYCtrlView.h"
-#import <libksygpulive/KSYGPUStreamerKit.h>
+#import <libksygpulive_ks3/KSYGPUStreamerKit.h>
 
 @interface KSYAiyaCameraVC : KSYUIVC
 

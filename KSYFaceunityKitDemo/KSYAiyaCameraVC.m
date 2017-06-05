@@ -1,6 +1,7 @@
 #import "KSYAiyaCameraVC.h"
 #import "KSYAiyaGPUImageTrackFilter.h"
 #import "KSYAiyaGPUImageEffectFilter.h"
+#import <AiyaCameraSDK/AiyaCameraSDK.h>
 
 @interface KSYAiyaCameraVC ()
 {
@@ -26,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [AiyaLicenseManager initLicense:@"5d86566163274e34aa40a4574749ccb5"];
     
     _kit = [[KSYGPUStreamerKit alloc] initWithDefaultCfg];
     [self addSubViews];
