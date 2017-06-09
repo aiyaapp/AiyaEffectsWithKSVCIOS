@@ -341,4 +341,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)dealloc{
+    [_cameraEffect deinitEffectContext];
+}
 @end
