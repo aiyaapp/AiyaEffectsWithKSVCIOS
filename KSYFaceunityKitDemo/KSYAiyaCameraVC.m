@@ -1,6 +1,8 @@
 #import "KSYAiyaCameraVC.h"
 #import "KSYAiyaGPUImageTrackFilter.h"
 #import "KSYAiyaGPUImageEffectFilter.h"
+#import "KSYAiyaGPUImageStyleFilter.h"
+#import "KSYAiyaGPUImageBeautifyFilter.h"
 #import <AiyaCameraSDK/AiyaCameraSDK.h>
 
 @interface KSYAiyaCameraVC ()
@@ -12,6 +14,8 @@
     AiyaCameraEffect *_cameraEffect;
     KSYAiyaGPUImageTrackFilter *_aiyaTrackFilter;
     KSYAiyaGPUImageEffectFilter *_aiyaEffectFilter;
+    KSYAiyaGPUImageBeautifyFilter *_beautifyFilter;
+    KSYAiyaGPUImageStyleFilter *_styleFilter;
 }
 @end
 
@@ -292,16 +296,24 @@
     _cameraEffect = [[AiyaCameraEffect alloc]init];
     _aiyaTrackFilter = [[KSYAiyaGPUImageTrackFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _aiyaEffectFilter = [[KSYAiyaGPUImageEffectFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"gougou"]];
-    GPUImageOutput<GPUImageInput>* beautifilter = [[KSYGPUBeautifyPlusFilter alloc]init];
+    _beautifyFilter = [[KSYAiyaGPUImageBeautifyFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
+    _styleFilter = [[KSYAiyaGPUImageStyleFilter alloc]init];
+    
+    _styleFilter.style = [UIImage imageNamed:@"purityLookup"];
+    _beautifyFilter.beautyType = AIYA_BEAUTY_TYPE_0;
+    _beautifyFilter.beautyLevel = AIYA_BEAUTY_LEVEL_6;
+    [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"meihualu"]];
     
     // 用滤镜组 将 滤镜 串联成整体
-    [beautifilter addTarget:_aiyaEffectFilter];
+    [_beautifyFilter addTarget:_styleFilter];
+    [_styleFilter addTarget:_aiyaEffectFilter];
+
     GPUImageFilterGroup * fg = [[GPUImageFilterGroup alloc] init];
     [fg addFilter:_aiyaTrackFilter];
     [fg addFilter:_aiyaEffectFilter];
-    [fg addFilter:beautifilter];
-    [fg setInitialFilters:[NSArray arrayWithObjects:_aiyaTrackFilter,beautifilter,nil]];
+    [fg addFilter:_beautifyFilter];
+    [fg addFilter:_styleFilter];
+    [fg setInitialFilters:[NSArray arrayWithObjects:_aiyaTrackFilter,_beautifyFilter,nil]];
     [fg setTerminalFilter:_aiyaEffectFilter];
 
     [_kit setupFilter:fg];
@@ -335,7 +347,7 @@
         _kit.streamerBase.videoFPS = 15;
         _kit.streamerBase.logBlock = ^(NSString* str){
         };
-    _hostURL = [NSURL URLWithString:@"rtmp://test.uplive.ksyun.com/live/823"];
+    _hostURL = [NSURL URLWithString:@"rtmp://120.25.237.18:1935/live/823"];
 }
 
 - (void)didReceiveMemoryWarning {
