@@ -7,9 +7,8 @@
 //
 
 #import "KSYAiyaGPUImageEffectFilter.h"
-@interface KSYAiyaGPUImageEffectFilter(){
-    
-    GPUImageFramebuffer *preOutputFramebuffer;
+
+@interface KSYAiyaGPUImageEffectFilter (){
     GLuint depthRenderbuffer;
 }
 
@@ -35,6 +34,17 @@
     return self;
 }
 
+
+- (void)setEffectPath:(NSString *)effectPath{
+    _effectPath = [effectPath copy];
+    self.cameraEffect.effectPath = _effectPath;
+}
+
+- (void)setEffectPlayCount:(NSUInteger)effectPlayCount{
+    _effectPlayCount = effectPlayCount;
+    self.currentPlayCount = 0;
+}
+
 - (void)renderToTextureWithVertices:(const GLfloat *)vertices textureCoordinates:(const GLfloat *)textureCoordinates;{
     if (self.preventRendering){
         [firstInputFramebuffer unlock];
@@ -50,62 +60,28 @@
         [outputFramebuffer lock];
     }
     
-    //------------->绘制原始图像<--------------//
-    [self setUniformsForProgramAtIndex:0];
-    
-    glClearColor(backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    glActiveTexture(GL_TEXTURE2);
-    glBindTexture(GL_TEXTURE_2D, [firstInputFramebuffer texture]);
-    
-    glUniform1i(filterInputTextureUniform, 2);
-    
-    glVertexAttribPointer(filterPositionAttribute, 2, GL_FLOAT, 0, 0, vertices);
-    glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    //------------->绘制原始图像<--------------//
-    
-    //------------->绘制完成缓存一帧图像<--------------//
-    if (!preOutputFramebuffer){
-        preOutputFramebuffer = outputFramebuffer;
-        [outputFramebuffer lock];
-        
-    }else {
-        GPUImageFramebuffer *tempOutputFramebuffer = outputFramebuffer;
-        outputFramebuffer = preOutputFramebuffer;
-        preOutputFramebuffer = tempOutputFramebuffer;
-        [outputFramebuffer activateFramebuffer];
-    }
-    
-    //NSLog(@"count : %ld",(long)outputFramebuffer.framebufferReferenceCount);
-    
-    [outputFramebuffer activateFramebuffer];
-    //------------->绘制完成缓存一帧图像<--------------//
-    
     //------------->绘制特效图像<--------------//
     glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbuffer);
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, outputFramebuffer.size.width, outputFramebuffer.size.height);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
     
-    int status = [self.cameraEffect processWithTexture:[outputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height];
+    int status = [self.cameraEffect processWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height];
     
     if (!self.effectPath || [self.effectPath isEqualToString:@""]){
-        self.effectStatus = KSYAIYA_EFFECT_STATUS_INIT;
+        self.effectStatus = AIYA_EFFECT_STATUS_INIT;
     }else if (status == 2) {//已经渲染完成一遍
         self.currentPlayCount ++;
         if (self.effectPlayCount != 0 && self.currentPlayCount >= self.effectPlayCount){
             [self setEffectPath:@""];
-            self.effectStatus = KSYAIYA_EFFECT_STATUS_PLAYEND;
+            self.effectStatus = AIYA_EFFECT_STATUS_PLAYEND;
         }else {
-            self.effectStatus = KSYAIYA_EFFECT_STATUS_PLAYING;
+            self.effectStatus = AIYA_EFFECT_STATUS_PLAYING;
         }
     }else if (self.effectPlayCount != 0 && self.currentPlayCount >= self.effectPlayCount) {//已经播放完成
         [self setEffectPath:@""];
-        self.effectStatus = KSYAIYA_EFFECT_STATUS_PLAYEND;
+        self.effectStatus = AIYA_EFFECT_STATUS_PLAYEND;
     }else {
-        self.effectStatus = KSYAIYA_EFFECT_STATUS_PLAYING;
+        self.effectStatus = AIYA_EFFECT_STATUS_PLAYING;
     }
     
     glEnableVertexAttribArray(filterPositionAttribute);
@@ -134,21 +110,8 @@
     }
 }
 
-- (void)setEffectPath:(NSString *)effectPath{
-    _effectPath = [effectPath copy];
-    self.cameraEffect.effectPath = _effectPath;
-}
-
-- (void)setEffectPlayCount:(NSUInteger)effectPlayCount{
-    _effectPlayCount = effectPlayCount;
-    self.currentPlayCount = 0;
-}
 
 -(void)dealloc{
-    if (preOutputFramebuffer) {
-        [preOutputFramebuffer unlock];
-    }
-    
     runSynchronouslyOnVideoProcessingQueue(^{
         [GPUImageContext useImageProcessingContext];
         

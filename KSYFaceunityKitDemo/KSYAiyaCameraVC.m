@@ -3,6 +3,9 @@
 #import "KSYAiyaGPUImageEffectFilter.h"
 #import "KSYAiyaGPUImageStyleFilter.h"
 #import "KSYAiyaGPUImageBeautifyFilter.h"
+#import "KSYAiyaGPUImageDelayAFrameFilter.h"
+#import "KSYAiyaGPUImageBigEyesFilter.h"
+#import "KSYAiyaGPUImageSlimFaceFilter.h"
 #import <AiyaCameraSDK/AiyaCameraSDK.h>
 
 @interface KSYAiyaCameraVC ()
@@ -13,9 +16,12 @@
     NSMutableDictionary *_obsDict;
     AiyaCameraEffect *_cameraEffect;
     KSYAiyaGPUImageTrackFilter *_aiyaTrackFilter;
+    KSYAiyaGPUImageDelayAFrameFilter *_delayFilter;
     KSYAiyaGPUImageEffectFilter *_aiyaEffectFilter;
     KSYAiyaGPUImageBeautifyFilter *_beautifyFilter;
     KSYAiyaGPUImageStyleFilter *_styleFilter;
+    KSYAiyaGPUImageBigEyesFilter *_bigEyesFilter;
+    KSYAiyaGPUImageSlimFaceFilter *_slimFaceFilter;
 }
 @end
 
@@ -295,25 +301,37 @@
     
     _cameraEffect = [[AiyaCameraEffect alloc]init];
     _aiyaTrackFilter = [[KSYAiyaGPUImageTrackFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
+    _delayFilter = [[KSYAiyaGPUImageDelayAFrameFilter alloc]init];
     _aiyaEffectFilter = [[KSYAiyaGPUImageEffectFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _beautifyFilter = [[KSYAiyaGPUImageBeautifyFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _styleFilter = [[KSYAiyaGPUImageStyleFilter alloc]init];
+    _bigEyesFilter = [[KSYAiyaGPUImageBigEyesFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
+    _slimFaceFilter = [[KSYAiyaGPUImageSlimFaceFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
+
     
     _styleFilter.style = [UIImage imageNamed:@"purityLookup"];
     _beautifyFilter.beautyType = AIYA_BEAUTY_TYPE_0;
     _beautifyFilter.beautyLevel = AIYA_BEAUTY_LEVEL_6;
+    _bigEyesFilter.bigEyesScale = 1;
+    _slimFaceFilter.slimFaceScale = 1;
     [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"meihualu"]];
     
     // 用滤镜组 将 滤镜 串联成整体
+    [_delayFilter addTarget:_beautifyFilter];
     [_beautifyFilter addTarget:_styleFilter];
-    [_styleFilter addTarget:_aiyaEffectFilter];
+    [_styleFilter addTarget:_bigEyesFilter];
+    [_bigEyesFilter addTarget:_slimFaceFilter];
+    [_slimFaceFilter addTarget:_aiyaEffectFilter];
 
     GPUImageFilterGroup * fg = [[GPUImageFilterGroup alloc] init];
     [fg addFilter:_aiyaTrackFilter];
+    [fg addFilter:_delayFilter];
     [fg addFilter:_aiyaEffectFilter];
     [fg addFilter:_beautifyFilter];
     [fg addFilter:_styleFilter];
-    [fg setInitialFilters:[NSArray arrayWithObjects:_aiyaTrackFilter,_beautifyFilter,nil]];
+    [fg addFilter:_bigEyesFilter];
+    [fg addFilter:_slimFaceFilter];
+    [fg setInitialFilters:[NSArray arrayWithObjects:_aiyaTrackFilter,_delayFilter,nil]];
     [fg setTerminalFilter:_aiyaEffectFilter];
 
     [_kit setupFilter:fg];

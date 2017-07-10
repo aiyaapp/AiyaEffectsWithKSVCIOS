@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30E37861F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D30E37851F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.m */; };
+		D37D55A41F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D37D55A11F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.m */; };
+		D37D55A51F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D37D55A31F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m */; };
 		D37EFE031EE5570B00EC6679 /* gougou in Resources */ = {isa = PBXBuildFile; fileRef = D37EFE021EE5570B00EC6679 /* gougou */; };
 		D37EFE051EE5573600EC6679 /* AiyaCameraSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D37EFE041EE5573600EC6679 /* AiyaCameraSDK.bundle */; };
 		D37EFE071EE5575F00EC6679 /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37EFE061EE5575F00EC6679 /* AiyaCameraSDK.framework */; };
@@ -38,6 +41,12 @@
 		1E3679E844601EEEBAA419DF /* Pods-KSYFaceunityKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYFaceunityKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2F3380426416F3080C1C736F /* Pods-KSYFaceunityKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYFaceunityKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KSYFaceunityKitDemo/Pods-KSYFaceunityKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B39E0E1FB5FB1AE2875D62F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D30E37841F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAiyaGPUImageDelayAFrameFilter.h; sourceTree = "<group>"; };
+		D30E37851F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageDelayAFrameFilter.m; sourceTree = "<group>"; };
+		D37D55A01F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAiyaGPUImageBigEyesFilter.h; sourceTree = "<group>"; };
+		D37D55A11F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageBigEyesFilter.m; sourceTree = "<group>"; };
+		D37D55A21F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAiyaGPUImageSlimFaceFilter.h; sourceTree = "<group>"; };
+		D37D55A31F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageSlimFaceFilter.m; sourceTree = "<group>"; };
 		D37EFE021EE5570B00EC6679 /* gougou */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gougou; sourceTree = "<group>"; };
 		D37EFE041EE5573600EC6679 /* AiyaCameraSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AiyaCameraSDK.bundle; sourceTree = "<group>"; };
 		D37EFE061EE5575F00EC6679 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
@@ -133,6 +142,12 @@
 				D3BC81C91EF3D82100E31D4B /* KSYAiyaGPUImageEffectFilter.m */,
 				D3BC81CA1EF3D82100E31D4B /* KSYAiyaGPUImageTrackFilter.h */,
 				D3BC81CB1EF3D82100E31D4B /* KSYAiyaGPUImageTrackFilter.m */,
+				D30E37841F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.h */,
+				D30E37851F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.m */,
+				D37D55A01F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.h */,
+				D37D55A11F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.m */,
+				D37D55A21F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.h */,
+				D37D55A31F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m */,
 			);
 			path = AiyaEffectSDK;
 			sourceTree = "<group>";
@@ -351,11 +366,13 @@
 				E3142FB71DC357AB00F88070 /* KSYAiyaCameraVC.m in Sources */,
 				D3BC81CC1EF3D82100E31D4B /* KSYAiyaGPUImageBeautifyFilter.m in Sources */,
 				D3BA485B1E77E59A00AA7526 /* KSYNameSlider.m in Sources */,
+				D30E37861F0E561100AEDAAC /* KSYAiyaGPUImageDelayAFrameFilter.m in Sources */,
 				D3BC81CD1EF3D82100E31D4B /* KSYAiyaGPUImageEffectFilter.m in Sources */,
 				D3BA48581E77E59A00AA7526 /* KSYPresetCfgView.m in Sources */,
 				D3BA485C1E77E59A00AA7526 /* KSYReachability.m in Sources */,
 				E3142FB41DC357AB00F88070 /* AppDelegate.m in Sources */,
 				D3BA485A1E77E59A00AA7526 /* KSYFileSelector.m in Sources */,
+				D37D55A41F1222CC00DB70AD /* KSYAiyaGPUImageBigEyesFilter.m in Sources */,
 				D3BA485E1E77E59A00AA7526 /* KSYUIView.m in Sources */,
 				D3BA48591E77E59A00AA7526 /* KSYStateLableView.m in Sources */,
 				D3BA485D1E77E59A00AA7526 /* KSYUIVC.m in Sources */,
@@ -363,6 +380,7 @@
 				D3BC81CE1EF3D82100E31D4B /* KSYAiyaGPUImageTrackFilter.m in Sources */,
 				D3BA48561E77E59A00AA7526 /* KSYCtrlView.m in Sources */,
 				D3BC81C51EF3D7E200E31D4B /* KSYAiyaGPUImageStyleFilter.m in Sources */,
+				D37D55A51F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m in Sources */,
 				D3BA48571E77E59A00AA7526 /* KSYPresetCfgVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,3 +1,6 @@
 Pods/
 Podfile.lock
 KSYFaceunityKitDemo.xcworkspace
+._*
+.*
+KSYFaceunityKitDemo/AiyaEffectSDK/AiyaCameraSDK.framework
