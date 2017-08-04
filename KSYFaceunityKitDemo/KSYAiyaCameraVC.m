@@ -2,7 +2,7 @@
 #import "KSYAiyaGPUImageTrackFilter.h"
 #import "KSYAiyaGPUImageEffectFilter.h"
 #import "KSYAiyaGPUImageStyleFilter.h"
-#import "KSYAiyaGPUImageBeautifyFilter.h"
+#import "KSYAiyaGPUImageSmoothSkinFilter.h"
 #import "KSYAiyaGPUImageDelayAFrameFilter.h"
 #import "KSYAiyaGPUImageBigEyesFilter.h"
 #import "KSYAiyaGPUImageSlimFaceFilter.h"
@@ -18,7 +18,7 @@
     KSYAiyaGPUImageTrackFilter *_aiyaTrackFilter;
     KSYAiyaGPUImageDelayAFrameFilter *_delayFilter;
     KSYAiyaGPUImageEffectFilter *_aiyaEffectFilter;
-    KSYAiyaGPUImageBeautifyFilter *_beautifyFilter;
+    KSYAiyaGPUImageSmoothSkinFilter *_smoothSkinFilter;
     KSYAiyaGPUImageStyleFilter *_styleFilter;
     KSYAiyaGPUImageBigEyesFilter *_bigEyesFilter;
     KSYAiyaGPUImageSlimFaceFilter *_slimFaceFilter;
@@ -303,22 +303,21 @@
     _aiyaTrackFilter = [[KSYAiyaGPUImageTrackFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _delayFilter = [[KSYAiyaGPUImageDelayAFrameFilter alloc]init];
     _aiyaEffectFilter = [[KSYAiyaGPUImageEffectFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    _beautifyFilter = [[KSYAiyaGPUImageBeautifyFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
+    _smoothSkinFilter = [[KSYAiyaGPUImageSmoothSkinFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _styleFilter = [[KSYAiyaGPUImageStyleFilter alloc]init];
     _bigEyesFilter = [[KSYAiyaGPUImageBigEyesFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _slimFaceFilter = [[KSYAiyaGPUImageSlimFaceFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-
     
     _styleFilter.style = [UIImage imageNamed:@"purityLookup"];
-    _beautifyFilter.beautyType = AIYA_BEAUTY_TYPE_0;
-    _beautifyFilter.beautyLevel = AIYA_BEAUTY_LEVEL_6;
+    _styleFilter.intensity = 1;
+    _smoothSkinFilter.intensity = 1;
     _bigEyesFilter.bigEyesScale = 1;
     _slimFaceFilter.slimFaceScale = 1;
-    [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"meihualu"]];
+    [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"gougou"]];
     
     // 用滤镜组 将 滤镜 串联成整体
-    [_delayFilter addTarget:_beautifyFilter];
-    [_beautifyFilter addTarget:_styleFilter];
+    [_delayFilter addTarget:_smoothSkinFilter];
+    [_smoothSkinFilter addTarget:_styleFilter];
     [_styleFilter addTarget:_bigEyesFilter];
     [_bigEyesFilter addTarget:_slimFaceFilter];
     [_slimFaceFilter addTarget:_aiyaEffectFilter];
@@ -327,7 +326,7 @@
     [fg addFilter:_aiyaTrackFilter];
     [fg addFilter:_delayFilter];
     [fg addFilter:_aiyaEffectFilter];
-    [fg addFilter:_beautifyFilter];
+    [fg addFilter:_smoothSkinFilter];
     [fg addFilter:_styleFilter];
     [fg addFilter:_bigEyesFilter];
     [fg addFilter:_slimFaceFilter];

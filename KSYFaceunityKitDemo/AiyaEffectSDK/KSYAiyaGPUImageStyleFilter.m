@@ -35,4 +35,10 @@
     [lookupImageSource processImage];
 }
 
+- (void)setIntensity:(CGFloat)intensit{
+    _intensity = intensit;
+    
+    lookupFilter.intensity = intensit;
+}
+
 @end
