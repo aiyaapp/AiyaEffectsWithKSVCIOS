@@ -12,7 +12,7 @@
 		D37D55A51F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D37D55A31F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m */; };
 		D37EFE031EE5570B00EC6679 /* gougou in Resources */ = {isa = PBXBuildFile; fileRef = D37EFE021EE5570B00EC6679 /* gougou */; };
 		D37EFE051EE5573600EC6679 /* AiyaCameraSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D37EFE041EE5573600EC6679 /* AiyaCameraSDK.bundle */; };
-		D37EFE071EE5575F00EC6679 /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37EFE061EE5575F00EC6679 /* AiyaCameraSDK.framework */; };
+		D3916DF01F5FDF9A006B5751 /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3916DEF1F5FDF9A006B5751 /* AiyaCameraSDK.framework */; };
 		D3BA47D61E77DE7900AA7526 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47D51E77DE7900AA7526 /* libc++.tbd */; };
 		D3BA47D81E77DE7E00AA7526 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA47D71E77DE7E00AA7526 /* libz.tbd */; };
 		D3BA48561E77E59A00AA7526 /* KSYCtrlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA48441E77E59A00AA7526 /* KSYCtrlView.m */; };
@@ -48,7 +48,7 @@
 		D37D55A31F1222CC00DB70AD /* KSYAiyaGPUImageSlimFaceFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAiyaGPUImageSlimFaceFilter.m; sourceTree = "<group>"; };
 		D37EFE021EE5570B00EC6679 /* gougou */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gougou; sourceTree = "<group>"; };
 		D37EFE041EE5573600EC6679 /* AiyaCameraSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AiyaCameraSDK.bundle; sourceTree = "<group>"; };
-		D37EFE061EE5575F00EC6679 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
+		D3916DEF1F5FDF9A006B5751 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
 		D3BA47CD1E77D32400AA7526 /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
 		D3BA47D51E77DE7900AA7526 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3BA47D71E77DE7E00AA7526 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -95,9 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37EFE071EE5575F00EC6679 /* AiyaCameraSDK.framework in Frameworks */,
 				D3BA47D81E77DE7E00AA7526 /* libz.tbd in Frameworks */,
 				D3BA47D61E77DE7900AA7526 /* libc++.tbd in Frameworks */,
+				D3916DF01F5FDF9A006B5751 /* AiyaCameraSDK.framework in Frameworks */,
 				DE8D88B7B3EA2D2CAC19E285 /* libPods-KSYFaceunityKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D37EFE041EE5573600EC6679 /* AiyaCameraSDK.bundle */,
-				D37EFE061EE5575F00EC6679 /* AiyaCameraSDK.framework */,
+				D3916DEF1F5FDF9A006B5751 /* AiyaCameraSDK.framework */,
 				D3BC81C31EF3D7E200E31D4B /* KSYAiyaGPUImageStyleFilter.h */,
 				D3BC81C41EF3D7E200E31D4B /* KSYAiyaGPUImageStyleFilter.m */,
 				D3BC81C61EF3D82100E31D4B /* KSYAiyaGPUImageSmoothSkinFilter.h */,

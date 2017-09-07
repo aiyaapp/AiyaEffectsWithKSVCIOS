@@ -38,7 +38,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [AiyaLicenseManager initLicense:@"5d86566163274e34aa40a4574749ccb5"];
+    [AiyaLicenseManager initLicense:@"5d86566163274e34aa40a4574749ccb5" succ:^{
+        NSLog(@"验证成功");
+    } failed:^(NSString *errMsg) {
+        NSLog(@"验证失败");
+    }];
     
     _kit = [[KSYGPUStreamerKit alloc] initWithDefaultCfg];
     [self addSubViews];
@@ -299,6 +303,7 @@
 
 -(void)setupAiyaCamera{
     
+    // 按照GPUImage的方式封装哎吖特效
     _cameraEffect = [[AiyaCameraEffect alloc]init];
     _aiyaTrackFilter = [[KSYAiyaGPUImageTrackFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _delayFilter = [[KSYAiyaGPUImageDelayAFrameFilter alloc]init];
@@ -308,6 +313,7 @@
     _bigEyesFilter = [[KSYAiyaGPUImageBigEyesFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     _slimFaceFilter = [[KSYAiyaGPUImageSlimFaceFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
     
+    // 设置特效
     _styleFilter.style = [UIImage imageNamed:@"purityLookup"];
     _styleFilter.intensity = 1;
     _smoothSkinFilter.intensity = 1;
@@ -315,7 +321,7 @@
     _slimFaceFilter.slimFaceScale = 1;
     [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"gougou"]];
     
-    // 用滤镜组 将 滤镜 串联成整体
+    // 按照GPUImage的方式 用滤镜组 将 滤镜 串联成整体
     [_delayFilter addTarget:_smoothSkinFilter];
     [_smoothSkinFilter addTarget:_styleFilter];
     [_styleFilter addTarget:_bigEyesFilter];

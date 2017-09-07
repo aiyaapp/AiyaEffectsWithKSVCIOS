@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, KSYAIYA_EFFECT_STATUS) {
 
 @property (nonatomic, assign, readonly) int effectStatus;
 
+@property (nonatomic, assign, readonly) AIYA_CAMERA_EFFECT_ERROR_CODE errorCode;
+
 - (id)initWithAiyaCameraEffect:(AiyaCameraEffect *)cameraEffect;
 
 @end

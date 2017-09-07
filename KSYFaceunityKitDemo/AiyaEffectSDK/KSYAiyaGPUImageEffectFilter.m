@@ -18,6 +18,9 @@
 
 @property (nonatomic, assign) int effectStatus;
 
+@property (nonatomic, assign) AIYA_CAMERA_EFFECT_ERROR_CODE errorCode;
+
+
 @end
 
 @implementation KSYAiyaGPUImageEffectFilter
@@ -32,12 +35,6 @@
     [self createRBO];
     
     return self;
-}
-
-
-- (void)setEffectPath:(NSString *)effectPath{
-    _effectPath = [effectPath copy];
-    self.cameraEffect.effectPath = _effectPath;
 }
 
 - (void)setEffectPlayCount:(NSUInteger)effectPlayCount{
@@ -65,7 +62,7 @@
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, outputFramebuffer.size.width, outputFramebuffer.size.height);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbuffer);
     
-    int status = [self.cameraEffect processWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height];
+    int status = [self.cameraEffect effectWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height effectPath:self.effectPath error:&_errorCode];
     
     if (!self.effectPath || [self.effectPath isEqualToString:@""]){
         self.effectStatus = AIYA_EFFECT_STATUS_INIT;

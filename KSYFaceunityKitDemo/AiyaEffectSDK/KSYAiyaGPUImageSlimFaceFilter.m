@@ -26,11 +26,6 @@
     return self;
 }
 
-- (void)setSlimFaceScale:(float)slimFaceScale{
-    _slimFaceScale = slimFaceScale;
-    self.cameraEffect.slimFaceScale = slimFaceScale;
-}
-
 - (void)renderToTextureWithVertices:(const GLfloat *)vertices textureCoordinates:(const GLfloat *)textureCoordinates;{
     if (self.preventRendering){
         [firstInputFramebuffer unlock];
@@ -47,7 +42,7 @@
     }
     
     //------------->绘制大眼图像<--------------//
-    [self.cameraEffect processSlimFaceWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height];
+    [self.cameraEffect slimFaceWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height slimFaceScale:self.slimFaceScale];
     
     glEnableVertexAttribArray(filterPositionAttribute);
     glEnableVertexAttribArray(filterTextureCoordinateAttribute);

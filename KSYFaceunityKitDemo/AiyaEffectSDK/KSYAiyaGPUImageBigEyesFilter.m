@@ -26,11 +26,6 @@
     return self;
 }
 
-- (void)setBigEyesScale:(float)bigEyesScale{
-    _bigEyesScale = bigEyesScale;
-    self.cameraEffect.bigEyesScale = bigEyesScale;
-}
-
 - (void)renderToTextureWithVertices:(const GLfloat *)vertices textureCoordinates:(const GLfloat *)textureCoordinates;{
     if (self.preventRendering){
         [firstInputFramebuffer unlock];
@@ -47,7 +42,7 @@
     }
     
     //------------->绘制大眼图像<--------------//
-    [self.cameraEffect processBigEyesWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height];
+    [self.cameraEffect bigEyesWithTexture:[firstInputFramebuffer texture] width:outputFramebuffer.size.width height:outputFramebuffer.size.height bigEyesScale:self.bigEyesScale];
     
     glEnableVertexAttribArray(filterPositionAttribute);
     glEnableVertexAttribArray(filterTextureCoordinateAttribute);
