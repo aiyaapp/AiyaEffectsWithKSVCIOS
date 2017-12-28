@@ -1,12 +1,9 @@
 #import "KSYAiyaCameraVC.h"
-#import "KSYAiyaGPUImageTrackFilter.h"
-#import "KSYAiyaGPUImageEffectFilter.h"
-#import "KSYAiyaGPUImageStyleFilter.h"
-#import "KSYAiyaGPUImageSmoothSkinFilter.h"
-#import "KSYAiyaGPUImageDelayAFrameFilter.h"
-#import "KSYAiyaGPUImageBigEyesFilter.h"
-#import "KSYAiyaGPUImageSlimFaceFilter.h"
-#import <AiyaCameraSDK/AiyaCameraSDK.h>
+#import "AiyaEffectFilter.h"
+
+//----------哎吖科技添加 开始----------//
+#import <AiyaEffectSDK/AiyaEffectSDK.h>
+//----------哎吖科技添加 结束----------//
 
 @interface KSYAiyaCameraVC ()
 {
@@ -14,14 +11,9 @@
     NSDateFormatter * _dateFormatter;
     int64_t _seconds;
     NSMutableDictionary *_obsDict;
-    AiyaCameraEffect *_cameraEffect;
-    KSYAiyaGPUImageTrackFilter *_aiyaTrackFilter;
-    KSYAiyaGPUImageDelayAFrameFilter *_delayFilter;
-    KSYAiyaGPUImageEffectFilter *_aiyaEffectFilter;
-    KSYAiyaGPUImageSmoothSkinFilter *_smoothSkinFilter;
-    KSYAiyaGPUImageStyleFilter *_styleFilter;
-    KSYAiyaGPUImageBigEyesFilter *_bigEyesFilter;
-    KSYAiyaGPUImageSlimFaceFilter *_slimFaceFilter;
+//----------哎吖科技添加 开始----------//
+    AiyaEffectFilter *_effectFilter;
+//----------哎吖科技添加 结束----------//
 }
 @end
 
@@ -38,11 +30,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [AiyaLicenseManager initLicense:@"5d86566163274e34aa40a4574749ccb5" succ:^{
-        NSLog(@"验证成功");
-    } failed:^(NSString *errMsg) {
-        NSLog(@"验证失败");
-    }];
+    // license state notification
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(licenseMessage:) name:AiyaLicenseNotification object:nil];
+    
+    // render state notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aiyaMessage:) name:AiyaMessageNotification object:nil];
+    
+    [AYLicenseManager initLicense:@"b67940ee2f9440f8b6d54ef110312008"];
     
     _kit = [[KSYGPUStreamerKit alloc] initWithDefaultCfg];
     [self addSubViews];
@@ -302,44 +296,18 @@
 }
 
 -(void)setupAiyaCamera{
-    
-    // 按照GPUImage的方式封装哎吖特效
-    _cameraEffect = [[AiyaCameraEffect alloc]init];
-    _aiyaTrackFilter = [[KSYAiyaGPUImageTrackFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    _delayFilter = [[KSYAiyaGPUImageDelayAFrameFilter alloc]init];
-    _aiyaEffectFilter = [[KSYAiyaGPUImageEffectFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    _smoothSkinFilter = [[KSYAiyaGPUImageSmoothSkinFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    _styleFilter = [[KSYAiyaGPUImageStyleFilter alloc]init];
-    _bigEyesFilter = [[KSYAiyaGPUImageBigEyesFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    _slimFaceFilter = [[KSYAiyaGPUImageSlimFaceFilter alloc]initWithAiyaCameraEffect:_cameraEffect];
-    
+//----------哎吖科技添加 开始----------//
+    _effectFilter = [[AiyaEffectFilter alloc]init];
+
     // 设置特效
-    _styleFilter.style = [UIImage imageNamed:@"purityLookup"];
-    _styleFilter.intensity = 1;
-    _smoothSkinFilter.intensity = 1;
-    _bigEyesFilter.bigEyesScale = 1;
-    _slimFaceFilter.slimFaceScale = 1;
-    [_aiyaEffectFilter setEffectPath:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"gougou"]];
+    _effectFilter.style = [UIImage imageNamed:@"purityLookup"];
+    [_effectFilter setSmooth:1];
+    [_effectFilter setBigEye:0.2];
+    [_effectFilter setSlimFace:0.2];
+    [_effectFilter setEffect:[[NSBundle mainBundle] pathForResource:@"meta" ofType:@"json" inDirectory:@"gougou"]];
     
-    // 按照GPUImage的方式 用滤镜组 将 滤镜 串联成整体
-    [_delayFilter addTarget:_smoothSkinFilter];
-    [_smoothSkinFilter addTarget:_styleFilter];
-    [_styleFilter addTarget:_bigEyesFilter];
-    [_bigEyesFilter addTarget:_slimFaceFilter];
-    [_slimFaceFilter addTarget:_aiyaEffectFilter];
-
-    GPUImageFilterGroup * fg = [[GPUImageFilterGroup alloc] init];
-    [fg addFilter:_aiyaTrackFilter];
-    [fg addFilter:_delayFilter];
-    [fg addFilter:_aiyaEffectFilter];
-    [fg addFilter:_smoothSkinFilter];
-    [fg addFilter:_styleFilter];
-    [fg addFilter:_bigEyesFilter];
-    [fg addFilter:_slimFaceFilter];
-    [fg setInitialFilters:[NSArray arrayWithObjects:_aiyaTrackFilter,_delayFilter,nil]];
-    [fg setTerminalFilter:_aiyaEffectFilter];
-
-    [_kit setupFilter:fg];
+    [_kit setupFilter:_effectFilter];
+//----------哎吖科技添加 结束----------//
 }
 
 - (void) setStreamerCfg { // must set after capture
@@ -373,11 +341,29 @@
     _hostURL = [NSURL URLWithString:@"rtmp://120.25.237.18:1935/live/823"];
 }
 
+- (void)licenseMessage:(NSNotification *)notifi{
+    
+    AiyaLicenseResult result = [notifi.userInfo[AiyaLicenseNotificationUserInfoKey] integerValue];
+    switch (result) {
+        case AiyaLicenseSuccess:
+            NSLog(@"License 验证成功");
+            break;
+        case AiyaLicenseFail:
+            NSLog(@"License 验证失败");
+            break;
+    }
+}
+
+- (void)aiyaMessage:(NSNotification *)notifi{
+    
+//    NSString *message = notifi.userInfo[AiyaMessageNotificationUserInfoKey];
+//    NSLog(@"message : %@",message);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void)dealloc{
-    [_cameraEffect deinitEffectContext];
 }
 @end

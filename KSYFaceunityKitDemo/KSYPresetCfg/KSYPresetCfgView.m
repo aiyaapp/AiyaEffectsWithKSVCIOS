@@ -77,7 +77,7 @@
     if (self.width > self.height){
         self.winWdt = self.width/2;
     }
-    self.btnH = 35*2;
+    self.btnH = 35;
     [self putSlider: _hostUrlUI andSwitch: _doneBtn];
     self.btnH=35;
     [self putLable:_lblResolutionUI andView:_resolutionUI];
